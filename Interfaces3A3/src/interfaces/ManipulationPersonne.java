@@ -17,7 +17,7 @@ public class ManipulationPersonne implements Interface1<Personne>{
     
     @Override
     public void ajouter(Personne o) {
-        System.out.println("ajout");
+        System.out.println("ajouter");
     }
 
     @Override
