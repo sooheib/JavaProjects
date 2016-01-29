@@ -21,8 +21,7 @@ public class CollectionList3A3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        
+
 //        List<String> list=new ArrayList<>();
 //        list.add("test");
 //        list.add("a");
