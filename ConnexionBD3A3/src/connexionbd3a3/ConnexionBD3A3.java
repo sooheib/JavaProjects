@@ -29,6 +29,7 @@ public class ConnexionBD3A3 {
     public static void main(String[] args) {
         try {
             // TODO code application logic here
+
             cnx=DriverManager.getConnection(url, login, password);
             CRUD crud=new CRUD();
            crud.ajouterPersonne("Taktak", "AbdelHafidh");
