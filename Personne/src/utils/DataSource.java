@@ -18,14 +18,16 @@ public class DataSource {
     private  String login;
     private String password;
     private Properties properties;
-
+    private static DataSource instance;
     private DataSource(){
         Properties properties=new Properties();
         try {
             properties.load(new FileInputStream(new File("Configuration.properties")));
+           /*********************************Recuperation url-login-password****************************/
             url=properties.getProperty("url");
             login=properties.getProperty("login");
             password=properties.getProperty("password");
+            /*********************************Etablir CNX****************************/
             connection= DriverManager.getConnection(url,login,password);
         } catch (IOException e) {
             e.printStackTrace();
@@ -33,6 +35,12 @@ public class DataSource {
             e.printStackTrace();
         }
     }
-
-
+    public static DataSource getInstance(){
+        if(instance==null)
+            instance=new DataSource();
+        return instance;
+    }
+    public Connection getConnection(){
+        return connection;
+    }
 }
